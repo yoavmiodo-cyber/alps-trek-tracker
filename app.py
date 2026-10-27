@@ -159,7 +159,7 @@ with tab2:
     st.markdown("### Day 2: Leg Strength & Balance Session")
     st.write("**Complete 3 sets of the following routine:**")
     
-    st.markdown("""
+    st.markdown
     1. **Bodyweight Squats (12–15 reps):** 
        * *Instruction:* Stand feet shoulder-width apart. Lower hips back and down like sitting in a chair. Keep chest up and knees tracking over toes.
     2. **Reverse Lunges (10 reps per leg):**

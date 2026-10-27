@@ -159,8 +159,56 @@ with tab2:
     st.markdown("### Day 2: Leg Strength & Balance Session")
     st.write("**Complete 3 sets of the following routine:**")
     
-    st.markdown
+    st.markdown("""
     1. **Bodyweight Squats (12–15 reps):** 
        * *Instruction:* Stand feet shoulder-width apart. Lower hips back and down like sitting in a chair. Keep chest up and knees tracking over toes.
     2. **Reverse Lunges (10 reps per leg):**
-       * *Instruction:* Step back with one leg, bending both knees to 90 degrees. Push through front heel to return.
+       * *Instruction:* Step back with one leg, bending both knees to 90 degrees. Push through front heel to return. Protects knees better than forward lunges.
+    3. **Step-Downs (8 reps per leg):**
+       * *Instruction:* Stand on a low step/stair. Slowly lower one foot toward the floor in a controlled 3-second descent, then push back up. *Essential for downhill mountain stability!*
+    4. **Glute Bridges (15 reps):**
+       * *Instruction:* Lie on back with knees bent and feet flat. Drive hips toward the ceiling, squeezing glutes at the top.
+    5. **Plank Hold (45–60 seconds):**
+       * *Instruction:* Hold forearms and toes on floor, keeping body in a straight line without letting lower back arch.
+    """)
+    
+    if "Knee pain on descents" in profile["joints"]:
+        st.info("💡 **Joint Note:** Take extra care on the 3-second step-down control. Keep movements slow and pain-free.")
+        
+    key2 = f"{current_user}_W{week_num}_Day 2 (Strength)"
+    done2 = st.checkbox("Mark Day 2 as Completed", value=st.session_state.completed_workouts.get(key2, False))
+    st.session_state.completed_workouts[key2] = done2
+
+# --- DAY 3 ---
+with tab3:
+    st.markdown("### Day 3: Incline & Stair Conditioning")
+    st.write(f"**Duration:** 30–45 minutes")
+    st.write(f"**Current Pack Weight:** {pack_w} kg")
+    st.markdown("""
+    **Instructions:**
+    * Use a stair climber machine, outdoor park stairs, or a high-incline treadmill (8%–12% grade).
+    * Focus on pushing through your heels rather than your toes to engage glutes and hamstrings.
+    * Wear your trekking shoes to break them in.
+    """)
+    
+    key3 = f"{current_user}_W{week_num}_Day 3 (Incline)"
+    done3 = st.checkbox("Mark Day 3 as Completed", value=st.session_state.completed_workouts.get(key3, False))
+    st.session_state.completed_workouts[key3] = done3
+
+# --- DAY 4 ---
+with tab4:
+    st.markdown("### Day 4: Weekend Endurance Trek")
+    hike_hours = 1.5 + (week_num * 0.15) if week_num <= 16 else 2.0
+    st.write(f"**Target Duration:** {round(hike_hours, 1)} hours")
+    st.write(f"**Pack Weight:** {pack_w} kg")
+    st.markdown("""
+    **Instructions:**
+    * Find local trails with rolling terrain or uneven paths.
+    * Wear fully loaded backpack with gear/water to hit target weight.
+    * Practice using trekking poles on downhill sections to take stress off your knees.
+    * Practice taking small hydration/snack breaks every 45–60 minutes.
+    """)
+    
+    key4 = f"{current_user}_W{week_num}_Day 4 (Weekend Trek)"
+    done4 = st.checkbox("Mark Day 4 as Completed", value=st.session_state.completed_workouts.get(key4, False))
+    st.session_state.completed_workouts[key4] = done4
